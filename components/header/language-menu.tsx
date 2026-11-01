@@ -2,7 +2,7 @@
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Check } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { LOCALE_COOKIE, localeFromPath, localizedPath, type Locale } from "@/lib/i18n";
 
@@ -27,6 +27,7 @@ function Flag({ locale }: { locale: Locale }) {
 
 export function LanguageMenu({ compact = false }: { compact?: boolean }) {
   const pathname = usePathname();
+  const router = useRouter();
   const locale = localeFromPath(pathname);
   const code = locale.toUpperCase();
   const languageLabel = { en: "Language", de: "Sprache", fr: "Langue", sv: "Språk", no: "Språk", da: "Sprog", fi: "Kieli", nl: "Taal", it: "Lingua", es: "Idioma", pl: "Język", cs: "Jazyk" }[locale];
@@ -34,7 +35,7 @@ export function LanguageMenu({ compact = false }: { compact?: boolean }) {
 
   const choose = (nextLocale: Locale) => {
     document.cookie = `${LOCALE_COOKIE}=${nextLocale}; Path=/; Max-Age=31536000; SameSite=Lax`;
-    window.location.assign(localizedPath(pathname, nextLocale));
+    router.push(localizedPath(pathname, nextLocale));
   };
 
   return (
