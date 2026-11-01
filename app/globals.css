@@ -255,7 +255,7 @@ img, svg { display: block; max-width: 100%; }
 .product-card .product-visual__image { height: clamp(230px, 31vw, 380px); }
 .product-card-copy { display: grid; gap: 1rem; padding: 1.35rem; }
 .product-card-topline { display: flex; justify-content: space-between; color: var(--muted); font-size: .67rem; font-weight: 750; letter-spacing: .07em; }
-.bundle-label { display: inline-flex; align-items: center; gap: .3rem; color: var(--green); }
+.bundle-label { display: inline-flex; align-items: center; gap: .3rem; color: var(--green); font-size: .9rem; }
 .product-card h3 { margin: 0; font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -.035em; }
 .product-card-copy > div > p { margin: .4rem 0 0; color: var(--muted); }
 .product-card-actions { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; border-top: 1px solid var(--line); padding-top: 1rem; }
